@@ -16,6 +16,7 @@ public class House {
 
 	
 	public void draw(PApplet surface) {
+		
 		surface.scale(scale);
 		surface.rect(x-150, y-100, 300, 200);
 		surface.triangle(x-150 ,y-100, x, y-200, x+150, y-100);
@@ -23,6 +24,9 @@ public class House {
 		surface.rect(x+50, y-75, 75, 75);
 		surface.rect(x-35, y, 75, 100);
 		surface.circle(x-20, y+50, 20);
+		
+		surface.pushStyle();
+		surface.popStyle();
 	}
 
 	

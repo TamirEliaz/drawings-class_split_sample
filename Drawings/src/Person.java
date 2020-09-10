@@ -12,6 +12,8 @@ public class Person {
 
 	
 	public void draw(PApplet surface) {;
+		surface.pushStyle();
+	
 		surface.scale(scale);
 		surface.rect(x-50, y-50, 50, 50);
 		surface.line(x-25,y, x-25, y+70);
@@ -19,6 +21,8 @@ public class Person {
 		surface.line(x-50,y+100, x-25, y+70);
 		surface.line(x,y+30, x-25, y);
 		surface.line(x-50,y+30, x-25, y);
+		
+		surface.popStyle();
 	}
 
 	

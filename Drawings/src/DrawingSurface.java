@@ -7,6 +7,8 @@ public class DrawingSurface extends PApplet {
 	// FIELDS
 	private House h;
 	private Person p;
+	private int DRAWING_WIDTH;
+	private int DRAWING_HEIGHT;
 	
 	// CONSTRUCTOR - Initialize any added fields here.
 	public DrawingSurface() {
@@ -23,12 +25,26 @@ public class DrawingSurface extends PApplet {
 	
 	public void draw() {
 		background(255);
+		scale((float)width/DRAWING_WIDTH, (float)height/DRAWING_HEIGHT);
+		
 		h.draw(this);
 		p.draw(this);
+		
+		
+		
+		pushStyle();
+		
+//		fill(0);
+//		textSize(10);
+//		text("", , );
+		
+		popStyle();
 	}
 	
 	public void mousePressed() {
-		h.move(mouseX, mouseY);
+		float scaleX = (float)width/DRAWING_WIDTH;
+		float scaleY = (float)height/DRAWING_HEIGHT;
+		h.move((int)(mouseX/scaleX), (int)(mouseY/scaleY));
 	}
 	
 	public void mouseWheel(MouseEvent event) {
